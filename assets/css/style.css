@@ -1,0 +1,391 @@
+    body,html{
+        font-family: 'Open Sans Condensed', sans-serif;
+        background-color: #78d1dc;
+    }
+    #text-rock{
+      font-family: "Luckiest Guy", cursive;
+    }
+    #text-scissors{
+      font-family: "Mr Dafoe", cursive;
+    }
+    .round-btn{
+      font-family: "Mr Dafoe", cursive;
+    }
+    .weapon li{
+          display: inline-block;
+          margin: 0.5rem;
+          border-radius: 100%;
+          background-color: white;
+          border: 5px solid #78d1dc;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 25vw;
+          height: 230vw;
+          max-width: 200px;
+          max-height: 200px;
+          cursor: pointer;
+          margin: 1rem;
+          background-size: 75%;
+    }
+    .weapon li:hover {
+        background-color: #78d1dc;
+        border-color: #f9f9f9;
+        transition: 0.4s ease-out all;
+    }
+    .opponent-choice.slide-opp-text{
+          position: absolute;
+          right: -300px;
+          top: 35px;
+          -webkit-animation: slideTexttoLeft 0.5s forwards;
+          -webkit-animation-delay: 0.5s;
+          animation: slideTexttoLeft 0.5s forwards;
+          animation-delay: 2s;
+    }
+    .player-character{
+      display: inline-block;
+      margin: 0.5rem;
+      border-radius: 100%;
+      background-color: white;
+      border: 5px solid #78d1dc;
+      background-repeat: no-repeat;
+      width: 7rem;
+      height: 7rem;
+      border-color: #333;
+      background-position: center;
+    }
+    .character1 {
+      background-image: url('http://hannahch.com/images/character1.svg');
+    }
+    .computer-character{
+      background-image: url('http://hannahch.com/images/robot2.svg');
+    }
+    .opponent-weapon.slideIn-opp-weap li{
+       position: absolute;
+          display: inline-block;
+          border-radius: 100%;
+          background-color: white;
+          border: 5px solid #78d1dc;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 10vw;
+          height: 100vw;
+          max-width: 100px;
+          max-height: 100px;
+          cursor: pointer;
+          right: -300px;
+          transition: 0.4s ease-out all;
+          margin: 4rem;
+          background-size: 75%;
+          -webkit-animation: slidetoLeft 0.5s forwards;
+          -webkit-animation-delay: 0.5s;
+          animation: slidetoLeft 0.5s forwards;
+          animation-delay: 2s;
+    }
+    .your-choice{
+          position: absolute;
+          left: -300px;
+          top: 35px;
+    }
+    .your-choice.slide-your-text{
+          -webkit-animation: slideTexttoRight 0.5s forwards;
+          -webkit-animation-delay: 0.5s;
+          animation: slideTexttoRight 0.5s forwards;
+          animation-delay: 1.5s;
+    }
+    #chosen-weapon li{
+          position: absolute;
+          display: inline-block;
+          border-radius: 100%;
+          background-color: white;
+          border: 5px solid #78d1dc;
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 10vw;
+          height: 100vw;
+          max-width: 100px;
+          max-height: 100px;
+          cursor: pointer;
+          left: -300px;
+          transition: 0.4s ease-out all;
+          margin: 4rem;
+          background-size: 75%;
+    }
+     #chosen-weapon.slideIn-your-weap li{
+      -webkit-animation: slidetoRight 0.5s forwards;
+      -webkit-animation-delay: 0.5s;
+      animation: slidetoRight 0.5s forwards;
+      animation-delay: 1.5s;
+
+    }
+      /*======= ANIMATIONS ========*/
+      /*Text Animations*/ 
+       /*Galing kaliwa Papuntang Kanan*/
+      @-webkit-keyframes slideTexttoRight {
+          100% {left: 220px;}
+      }
+
+      @keyframes slideTexttoRight {
+          100% {left: 220px;}
+      }
+       /*Galing kanan Papuntang Kaliwa*/
+       @-webkit-keyframes slideTexttoLeft {
+          100% {right: 245px;}
+      }
+
+      @keyframes slideTexttoLeft {
+          100% {right: 245px;}
+      }
+      /*Image Animations*/
+     /*Galing kaliwa Papuntang Kanan*/
+      @-webkit-keyframes slidetoRight {
+          100% {left: 150px;}
+      }
+
+      @keyframes slidetoRight {
+          100% {left: 150px;}
+      }
+     /*Galing kanan Papuntang Kaliwa*/
+      @-webkit-keyframes slidetoLeft {
+          100% {right: 200px;}
+      }
+
+      @keyframes slidetoLeft {
+          100% {right: 200px;}
+      }
+    /*Weapons Images*/
+    .rock {
+        background-image: url('http://hannahch.com/images/rock.svg');
+    }
+    .paper {
+        background-image: url('http://hannahch.com/images/paper.svg');
+    }
+
+    .scissors {
+        background-image: url('http://hannahch.com/images/scissors.svg');
+    }
+    #overlay {
+      height: 0;
+      width: 100%;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      background-color: rgb(0,0,0); /* Black fallback color */
+      background-color: #78d1dc; /* Black w/opacity */
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 0.5s cubic-bezier(0.46, -0.41, 0.3, 1.52);
+    }
+    #starting-screen {
+      height: 100%;
+      width: 100%;
+      position: fixed; /* Stay in place */
+      z-index: 99999; /* Sit on top */
+      left: 0;
+      top: 0;
+      background-color: rgb(0,0,0); /* Black fallback color */
+      background-color: #191919; /* Black w/opacity */
+      overflow-x: hidden; /* Disable horizontal scroll */
+      overflow-y: hidden;
+      transition: 0.5s cubic-bezier(0.46, -0.41, 0.3, 1.52);
+    }
+    .number-of-rounds-overlay{
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        background-color:#191919;
+        z-index:9999;
+        color:white;
+        height: 100%;
+        width: 0%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition:1s cubic-bezier(0.46, -0.41, 0.3, 1.52);
+    }
+     #overall-overlay {
+      height: 100%;
+      width: 0%;
+      position: fixed; /* Stay in place */
+      z-index: 9999; /* Sit on top */
+      right: 0;
+      top: 0;
+      color: black;
+      background-color: rgb(0,0,0); /* Black fallback color */
+      background-color: #78d1dc; /* Black w/opacity */
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 1s cubic-bezier(0.46, -0.41, 0.3, 1.52);
+      transition-delay: 1s;
+    }
+    .try-overlay{
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        background-color:#ffcccc;
+        z-index:9999;
+        color:white;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition:1s cubic-bezier(0.46, -0.41, 0.3, 1.52);
+     }
+     #result-overlay{
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        background-color:#ffcccc;
+        z-index:9999;
+        color:white;
+        height: 0%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        transition:1s cubic-bezier(0.46, -0.41, 0.3, 1.52);
+     }
+    #test1{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    #text{
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      font-size: 50px;
+      color: black;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    #text-overlay{
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    #p-overlay{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 20px;
+      color: white;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    .another-round{
+      position: absolute;
+      top: 62%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    #btn-overlay2{
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      font-size: 20px;
+      color: white;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    #btn-overlay{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      font-size: 20px;
+      color: white;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    .play_again{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      color: white;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+    }
+    .button:before, .button:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 51%;
+      height: 100%;
+      top: 0;
+      background-color: #f9f9f9;
+      transition: 0.4s ease-out all;
+    }
+    .button:before {
+      left: -100%;
+    }
+    .button:after {
+      right: -100%;
+    }
+/*ANIMATIONS*/
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-out-right {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+@keyframes fade-out-left {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+@keyframes headersize {
+  0% {
+    height: 100vh;
+  }
+  100% {
+    height: 3rem;
+  }
+}
+@keyframes scale-text {
+  100% {
+    font-size: 2rem;
+  }
+}
+@keyframes bg {
+  0% {
+    background-position: bottom -20rem center;
+  }
+  100% {
+    background-position: bottom -0.5rem center;
+  }
+}
