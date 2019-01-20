@@ -60,7 +60,7 @@
       background-image: url('http://hannahch.com/images/robot2.svg');
     }
     .opponent-weapon.slideIn-opp-weap li{
-       position: absolute;
+          position: absolute;
           display: inline-block;
           border-radius: 100%;
           background-color: white;
@@ -81,19 +81,17 @@
           animation: slidetoLeft 0.5s forwards;
           animation-delay: 2s;
     }
-    .your-choice{
+     .your-choice.slide-your-text{
           position: absolute;
           left: -300px;
           top: 35px;
-    }
-    .your-choice.slide-your-text{
           -webkit-animation: slideTexttoRight 0.5s forwards;
           -webkit-animation-delay: 0.5s;
           animation: slideTexttoRight 0.5s forwards;
           animation-delay: 1.5s;
     }
-    #chosen-weapon li{
-          position: absolute;
+     .chosen-weapon.slideIn-your-weap li{
+       position: absolute;
           display: inline-block;
           border-radius: 100%;
           background-color: white;
@@ -109,13 +107,26 @@
           transition: 0.4s ease-out all;
           margin: 4rem;
           background-size: 75%;
-    }
-     #chosen-weapon.slideIn-your-weap li{
-      -webkit-animation: slidetoRight 0.5s forwards;
-      -webkit-animation-delay: 0.5s;
-      animation: slidetoRight 0.5s forwards;
-      animation-delay: 1.5s;
+          -webkit-animation: slidetoRight 0.5s forwards;
+          -webkit-animation-delay: 0.5s;
+          animation: slidetoRight 0.5s forwards;
+          animation-delay: 1.5s;
 
+    }
+    @media (min-width: 1380px){
+        .opponent-weapon.slideIn-opp-weap li{
+          right: -1500px;
+        }
+        .opponent-choice.slide-opp-text{
+          right: -1500px;
+        }
+        .your-choice.slide-your-text{
+          left: -1500px;
+        }
+        .chosen-weapon.slideIn-your-weap li{
+          left:-1500px;;
+        }
+       
     }
       /*======= ANIMATIONS ========*/
       /*Text Animations*/ 

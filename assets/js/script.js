@@ -5,7 +5,6 @@
           $('[data-toggle="tooltip"]').tooltip()
         });
         $(".your-title").hide();
-        $(".opponent-title").hide();
         $("#btn-start").on('click',function(){
             $(this).hide();
             $(".number-of-rounds-overlay").css("width","100%");
@@ -104,6 +103,7 @@
                $("#overall-overlay").css("width","100%");
                if(yourScore > computerScore){
                     $("#text-overlay").text("Well Done!");
+                    $("#overall-overlay").css('background-color',"#78d1dc");
                     $("#p-overlay").text("You won against the computer!");
                }else if(yourScore < computerScore){
                     $("#text-overlay").text("You lose");
@@ -116,14 +116,19 @@
                }
             }
         }
-        $(".rematch").on('click',function(){
+        $(".another-round").on('click',function(){
             $("#btn-overlay").show();
             $("#overall-overlay").css("width","0%");
+            rematch();
         });
         $(".play_again").click(function(){
            if(round <= overall_round){
                 play_again();
            }else{
+                rematch();   
+           }
+        });
+        function rematch(){
                round = 1;
                computerScore = 0;
                yourScore = 0;
@@ -132,8 +137,7 @@
                $("#cmp_score").text(0);
                $("#total_round").text(1);
                play_again();
-           }
-        });
+        }
         function play_again(){
             $("#result-overlay").css('height',"0%");
             $(".chosen-weapon").removeClass("slideIn-your-weap");
